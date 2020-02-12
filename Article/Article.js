@@ -162,9 +162,11 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
   paragraph3.textContent = thirdParagraph;
 
+  span.textContent = 'Click here to read more!';
+
   // span article open on the article using the span as a button when clicked on
 
-  container.addEventListener('click',event=>{
+  span.addEventListener('click',event=>{
 
     container.classList.toggle('article-open')
 
