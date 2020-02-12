@@ -113,6 +113,31 @@ const data = [
 
 */
 
-function componentCreator(){
+function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagraph){
+
+  // defining elements
+  const container = document.createElement ('div');
+
+  const titles = document.createElement ('h2');
+
+  const text = document.createElement ('p')
+
+  const span = document.createElement('span')
+
+  // making parent child relation
+  container.appendChild(titles)
+
+  container.appendChild(text)
+
+  container.appendChild(span)
+
+  // giving elements classes
+  container.classList.add('article')
+
+  text.classList.add('date')
+
+  span.classList.add('expandButton')
   
+
+
 }
