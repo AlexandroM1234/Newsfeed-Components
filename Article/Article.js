@@ -120,24 +120,50 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
   const titles = document.createElement ('h2');
 
-  const text = document.createElement ('p')
+  const articleDate=document.createElement('p')
+
+  const paragraph1 = document.createElement ('p')
+
+  const paragraph2 = document.createElement ('p')
+  
+  const paragraph3 = document.createElement ('p')
 
   const span = document.createElement('span')
 
   // making parent child relation
   container.appendChild(titles)
 
-  container.appendChild(text)
+  container.appendChild(articleDate)
+
+  container.appendChild(pragraph1)
+
+  container.appendChild(pragraph2)
+
+  container.appendChild(pragraph3)
 
   container.appendChild(span)
 
   // giving elements classes
   container.classList.add('article')
 
-  text.classList.add('date')
+  articleDate.classList.add('date')
 
   span.classList.add('expandButton')
   
+  // defining what the elements return
+
+  titles.textContent = title;
+
+  articleDate.textContent = date;
+
+  paragraph1.textContent = firstParagraph;
+
+  paragraph2.textContent = secondParagraph;
+
+  paragraph3.textContent = thirdParagraph;
+
+  // span toggle when clicked on
+
 
 
 }
