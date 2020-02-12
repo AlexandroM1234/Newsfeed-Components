@@ -135,11 +135,11 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
   container.appendChild(articleDate)
 
-  container.appendChild(pragraph1)
+  container.appendChild(paragraph1)
 
-  container.appendChild(pragraph2)
+  container.appendChild(paragraph2)
 
-  container.appendChild(pragraph3)
+  container.appendChild(paragraph3)
 
   container.appendChild(span)
 
@@ -162,8 +162,21 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
   paragraph3.textContent = thirdParagraph;
 
-  // span toggle when clicked on
+  // span article open on the article using the span as a button when clicked on
 
+  span.addEventListener('click',event=>{
 
+    container.classList.toggle('article-open')
+
+  });
+
+  return container;
 
 }
+
+const body = document.querySelector('body')
+
+data.map(data=>{
+  body.appendChild(componentCreator(data.title,data.date,data.firstParagraph,data.secondParagraph,data.thirdParagraph))
+
+});
