@@ -164,7 +164,7 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
   // span article open on the article using the span as a button when clicked on
 
-  span.addEventListener('click',event=>{
+  container.addEventListener('click',event=>{
 
     container.classList.toggle('article-open')
 
@@ -174,9 +174,9 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
 }
 
-const body = document.querySelector('body')
+const test = document.querySelector('.articles')
 
 data.map(data=>{
-  body.appendChild(componentCreator(data.title,data.date,data.firstParagraph,data.secondParagraph,data.thirdParagraph))
+  test.appendChild(componentCreator(data.title,data.date,data.firstParagraph,data.secondParagraph,data.thirdParagraph))
 
 });
