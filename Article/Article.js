@@ -184,9 +184,9 @@ function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagra
 
 }
 
-const test = document.querySelector('.articles')
+const sitePage = document.querySelector('.articles')
 
 data.map(data=>{
-  test.appendChild(componentCreator(data.title,data.date,data.firstParagraph,data.secondParagraph,data.thirdParagraph))
+  sitePage.appendChild(componentCreator(data.title,data.date,data.firstParagraph,data.secondParagraph,data.thirdParagraph))
 
 });
