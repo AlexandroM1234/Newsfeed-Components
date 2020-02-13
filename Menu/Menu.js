@@ -34,6 +34,8 @@ let menuItems = [
   
 */
 
+const menuButton = document.querySelector('.menu-button')
+
 function menuComponent(menuItems){
 
   // declaring page elements
@@ -42,36 +44,27 @@ function menuComponent(menuItems){
   
   const menuList = document.createElement('ul');
 
-  const menuListItems = document.createElement('li');
-
-  // parent child relation
-
   menuContainer.appendChild(menuList)
 
- menuList.appendChild(menuListItems)
   // classes 
   
   menuContainer.classList.add('menu')
 
   // defining how the list items get there value from the array
-
-  // console.log(menuItems)
-
-  menuList.textContent= menuItems.forEach(element => {
-    
+  menuItems.forEach(item=>{
+    menuListItems=document.createElement('li');
+    menuList.appendChild(menuListItems);
+    menuListItems.textContent=item;
   });
-
-  const menuButton = document.querySelector('.menu-button')
-
-  menuButton.addEventListener('click',event=>{
-    menuContainer.classList.toggle('menu--open')
-  })
-
 
   return menuContainer
 }
 
+menuButton.addEventListener('click',event=>{
+  event.target.parentNode.lastChild.classList.toggle('menu--open');
+});
+
+
 const header = document.querySelector('.header')
-menuItems.map(items=>{
-  header.appendChild(menuComponent(menuItems))
-})
+
+header.appendChild(menuComponent(menuItems));
