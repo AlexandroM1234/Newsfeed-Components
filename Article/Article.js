@@ -85,7 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title:'Please Work',
+    date:'Feb 12th, 2020',
+    firstParagraph:'this actually works!',
+    secondParagraph:'How neat is that!',
+    thirdParagraph:'WOW'
   }
+
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +120,73 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function componentCreator(title,date,firstParagraph,secondParagraph,thirdParagraph){
+
+  // defining elements
+  const container = document.createElement ('div');
+
+  const titles = document.createElement ('h2');
+
+  const articleDate=document.createElement('p')
+
+  const paragraph1 = document.createElement ('p')
+
+  const paragraph2 = document.createElement ('p')
+  
+  const paragraph3 = document.createElement ('p')
+
+  const span = document.createElement('span')
+
+  // making parent child relation
+  container.appendChild(titles)
+
+  container.appendChild(articleDate)
+
+  container.appendChild(paragraph1)
+
+  container.appendChild(paragraph2)
+
+  container.appendChild(paragraph3)
+
+  container.appendChild(span)
+
+  // giving elements classes
+  container.classList.add('article')
+
+  articleDate.classList.add('date')
+
+  span.classList.add('expandButton')
+  
+  // defining what the elements return
+
+  titles.textContent = title;
+
+  articleDate.textContent = date;
+
+  paragraph1.textContent = firstParagraph;
+
+  paragraph2.textContent = secondParagraph;
+
+  paragraph3.textContent = thirdParagraph;
+
+  span.textContent = 'Click here to read more!';
+
+  // span article open on the article using the span as a button when clicked on
+
+  span.addEventListener('click',event=>{
+
+    container.classList.toggle('article-open')
+
+  });
+
+  return container;
+
+}
+
+const sitePage = document.querySelector('.articles')
+
+data.map(data=>{
+  sitePage.appendChild(componentCreator(data.title,data.date,data.firstParagraph,data.secondParagraph,data.thirdParagraph))
+
+});
